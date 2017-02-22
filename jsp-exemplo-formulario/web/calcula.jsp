@@ -1,6 +1,6 @@
 <%-- 
-    Document   : calcula.jsp
-    Created on : 22/02/2017, 11:05:21
+    Document   : calcula
+    Created on : 22/02/2017, 11:36:32
     Author     : Edson Melo de Souza (prof.edson.melo@gmail.com)
 --%>
 
@@ -9,36 +9,44 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Cálculos em JSP</title>
     </head>
     <body>
-        <h1>Página JSP</h1>
-        <h2>
-            Esta página receberá os dados originados do formulário e realizará
-            o processamento dos dados enviados!
-        </h2>
+        <h1>Recuperando os dados e realizando um cálculo</h1>
         <%
             /**
-             * Vamos "pegar" os dados enviados pelo formulário e apresentar na
-             * tela
-             *
-             * A seguir são declaradas quatro variáveis do tipo String para
-             * receber os dados (pelo nome dos campos do formulário). As
-             * variáveis recebem o valor de cada campo utilizando a instrução:
-             * request.getParameter("nome do campo do formulario")
+             * Declarando variáveis para receber os valores informados e a
+             * operação. Perceba que há conversão de tipos, pois os dados
+             * enviados são do tipo String.
              */
-            String nome = request.getParameter("nome");
-            String sobrenome = request.getParameter("sobrenome");
-            String email = request.getParameter("email");
-            String telefone = request.getParameter("telefone");
+            double valor1 = Double.parseDouble(request.getParameter("valor1"));
+            double valor2 = Double.parseDouble(request.getParameter("valor2"));
+            double resultado = 0.0d;
+            int operacao = Integer.parseInt(request.getParameter("operacao"));
 
             /**
-             * A seguir os dados são apresentados no navegador
+             * Utiliza um switch para verificar qual operação foi selecionada As
+             * opções são numéricas, pois o JSP não aceita caracteres no switch.
              */
-            out.print("Nome: " + nome + "<br>");
-            out.print("Sobrenome: " + sobrenome + "<br>");
-            out.print("Email: " + email + "<br>");
-            out.print("Telefone: " + telefone + "<br>");
+            switch (operacao) {
+                case 1:
+                    resultado = (valor1 + valor2);
+                    break;
+                case 2:
+                    resultado = (valor1 - valor2);
+                    break;
+                case 3:
+                    resultado = (valor1 * valor2);
+                    break;
+                case 4:
+                    resultado = (valor1 / valor2);
+                    break;
+            }
+
+            /**
+             * Exibindo o resultado
+             */
+            out.print("O resultado da operação é: " + resultado);
         %>
     </body>
 </html>

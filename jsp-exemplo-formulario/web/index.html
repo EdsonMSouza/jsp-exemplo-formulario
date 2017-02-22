@@ -35,12 +35,27 @@ Citar a fonte em caso de uso para terceiros
     </head>
     <body>
         <h1>Formulário Exemplo</h1>
-        <form name="exemplo_formulario" action="calcula.jsp" method="POST">
+        <form name="exemplo_formulario" action="recebe.jsp" method="POST">
             <label>Nome:</label><input type="text" name="nome" /><br>
             <label>Sobrenome:</label><input type="text" name="sobrenome" /><br>
             <label>Email:</label><input type="text" name="email" /><br>
             <label>Telefone:</label><input type="text" name="telefone" /><br><br>
             <input class="botao" type="submit" name="bt_enviar" value="Enviar" />
+        </form>
+        
+        <br><br>
+        
+        <h1>Realizando Cálculos</h1>
+        <form name="calculos" action="calcula.jsp" method="POST">
+            <label>Valor 1:</label><input type="text" name="valor1" /><br>
+            <label>Valor 2:</label><input type="text" name="valor2" /><br><br>
+            <select name="operacao">
+                <option value="1">Adição</option>
+                <option value="2">Subtração</option>
+                <option value="3">Multiplicação</option>
+                <option value="4">Divisão</option>
+            </select><br><br>
+            <input class="botao" type="submit" name="bt_calcular" value="Calcular" />
         </form>
     </body>
 </html>
