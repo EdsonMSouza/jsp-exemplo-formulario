@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<!--
+Apenas para fins educacionais.
+Citar a fonte em caso de uso para terceiros
+-->
+<html>
+    <head>
+        <title>Exemplo de Formulário</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style type="text/css">
+            form,
+            label {
+                display: block;
+                padding: 10px;
+            }
+            form {
+                width: 200px;
+                margin: 10px;
+                background-color: rgba(0, 0, 0, 0.2);
+            }
+            label {
+                color: #000;
+                text-align: left;
+            }
+            input {
+                display: inline-block;
+                padding-left: 20px;
+            }
+            .botao{
+                width: 195px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Formulário Exemplo</h1>
+        <form name="exemplo_formulario" action="calcula.jsp" method="POST">
+            <label>Nome:</label><input type="text" name="nome" /><br>
+            <label>Sobrenome:</label><input type="text" name="sobrenome" /><br>
+            <label>Email:</label><input type="text" name="email" /><br>
+            <label>Telefone:</label><input type="text" name="telefone" /><br><br>
+            <input class="botao" type="submit" name="bt_enviar" value="Enviar" />
+        </form>
+    </body>
+</html>
